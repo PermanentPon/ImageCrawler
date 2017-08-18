@@ -5,8 +5,8 @@ import csv
 filePathDict = 'dogBreedsListGoogle.csv'
 
 def loadDogDict():
-    with open(filePathDict, mode='r') as infile:
-        reader = csv.reader(infile, delimiter=';')
+    with open(filePathDict,'rU') as infile:
+        reader = csv.reader(infile, dialect=csv.excel_tab, delimiter=';')
         dogBreedDict = {str(rows[0]).zfill(3) + '.' + str(rows[1]).replace(' ', '_'): str(rows[1]) for rows in reader}
     return dogBreedDict
 
