@@ -17,6 +17,7 @@ def crawl(breedDir, breedName):
                          date_min=None, date_max=None,
                          min_size=(300, 300), max_size=None)
 
-dogBreedDict = loadDogDict()
-for breedDir, breedName in dogBreedDict.items():
-    crawl(breedDir, breedName)
+if __name__ == "__main__":
+    dogBreedDict = loadDogDict()
+    for breedDir, breedName in dogBreedDict.items():
+        crawl(breedDir, breedName)
